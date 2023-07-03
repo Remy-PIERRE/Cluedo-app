@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/dist.css" />
+    <title>Cluedo App</title>
+  </head>
+  <body class="size_screen flex flex-col">
+    <header>
+      <div class="flex justify-between items-center p-8">
+        <h1 class="text-3xl font-extrabold">CLUEDO</h1>
+        <p class="text-sm pr-8">par Rémy Pierre</p>
+      </div>
+    </header>
+
+    <main class="h-full">
+      <section class="h-full flex justify-center items-center">
+        <div class="flex flex-col gap-4">
+          <div class="w-fit flex flex-col items-center">
+            <div
+              id="mainScreenLogButton"
+              class="mainScreen__menu__selection"
+            ></div>
+            <div
+              id="displayUserName"
+              class="hidden mainScreen__menu__displayUserName"
+            ></div>
+          </div>
+
+          <div id="mainScreenNewGameButton" class="mainScreen__menu__selection">
+            Nouvelle partie
+          </div>
+          <!-- <div
+            id="mainScreenScoreTabsButton"
+            class="mainScreen__menu__selection"
+          >
+            Tableau des scores
+          </div> -->
+        </div>
+      </section>
+    </main>
+
+    <section id="logModal" class="mainMenu__logModal">
+      <div class="mainMenu__logModal__wrapper" id="logModal__logIn__form">
+        <div>
+          <h2 class="text-2xl font-bold mb-8">Se connecter</h2>
+
+          <form class="mainMenu__logModal__form">
+            <div class="flex flex-col gap-1 mb-4">
+              <label for="userName" class="text-sm">Nom d'utilisateur</label>
+              <input
+                id="userName"
+                name="userName"
+                placeholder="exemple@ex.com"
+              />
+            </div>
+            <div class="flex flex-col gap-1 mb-4">
+              <label for="psw">Mot de passe</label>
+              <input id="psw" name="psw" />
+            </div>
+
+            <div class="flex justify-end mt-4">
+              <button class="btn btn-modal">Confirmer</button>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <p>
+            Pas de compte ?
+            <span
+              class="text-blue-800 cursor-pointer"
+              id="logModal__create__button"
+              >Créez</span
+            >
+            en un en quelques secondes.
+          </p>
+        </div>
+      </div>
+
+      <div
+        id="logModal__create__form"
+        class="mainMenu__logModal__wrapper hidden"
+      >
+        <h2 class="text-2xl font-bold mb-8">Créer un compte</h2>
+
+        <form class="mainMenu__logModal__form">
+          <div class="flex flex-col gap-1 mb-4">
+            <label for="userName">Nom d'utilisateur</label>
+            <input id="userName" name="userName" placeholder="exemple@ex.com" />
+          </div>
+          <div class="flex flex-col gap-1 mb-4">
+            <label for="psw">Mot de passe</label>
+            <input id="psw" name="psw" />
+          </div>
+          <div class="flex flex-col gap-1 mb-4">
+            <label for="pswConfirm">Confirmation du mot de passe</label>
+            <input id="pswConfirm" name="pswConfirm" />
+          </div>
+
+          <div class="flex justify-end mt-4">
+            <button class="btn btn-modal">Confirmer</button>
+          </div>
+        </form>
+
+        <div>
+          <p>
+            Vous possedez un compte ?
+            <span
+              class="text-blue-800 cursor-pointer"
+              id="logModal__logIn__button"
+              >Connectez vous</span
+            >
+            en quelques secondes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="./src/ui/mainScreen/main.js"></script>
+  </body>
+</html>
